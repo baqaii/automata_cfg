@@ -57,7 +57,7 @@ class Program
     }
     static void Main()
     {
-        Program P = new Program("aaabcc$".ToCharArray());
+        Program P = new Program("aaaabbcc$".ToCharArray());
         P.validate();
 
 
