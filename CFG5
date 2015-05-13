@@ -1,4 +1,4 @@
-//// ai bj ck where i<=k && b>=0
+//// ai bj ck where i<=k &&   i >= 0 , j>=0 , k>=0
 
 using System;
 
@@ -7,7 +7,7 @@ using System;
         static void Main(string[] args)
         {
             // char[] a = {'a', 'a', 'b', 'b', '$'};
-            CFG c = new CFG("aaccc$".ToCharArray());
+            CFG c = new CFG("aaaabbbbbbcccccccccccccccccccc$".ToCharArray());
             c.validate();
         }
     }
