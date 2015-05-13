@@ -1,1 +1,132 @@
 //ai bj ck where j = i + k
+using System;
+class Program
+{
+
+
+    //abbc
+    //aabbbbcc
+    //aabbbbc
+    /// <summary>
+    ///   ai bj ck where j = i + k;
+    /// </summary>
+    char[] takeInput;
+    int counter = 0;
+    bool checker1 = true;
+    bool checker2 = false;
+    public Program(char[] takeInput)
+    {
+
+        this.takeInput = takeInput;
+    }
+
+    public bool S()
+    {
+
+        if (takeInput[counter] == 'a')
+        {
+
+            counter++;
+            if (S() == true)
+            {
+                if (takeInput[counter] == 'b')
+                {
+
+                    counter++;
+                    return true;
+                }
+
+
+            }
+
+        }
+        else
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool B()
+    {
+        if (takeInput[counter] == 'b')
+        {
+            counter++;
+            B();
+        }
+        else if (takeInput[counter] == 'c')
+        {
+            return true;
+        }
+
+        return true;
+    }
+    public void validate()
+    {
+
+        if (S() == true)
+        {
+            if (takeInput[counter] == 'b')
+            {
+                if (Z() == true)
+                {
+
+                    if (takeInput[counter] == '$')
+                    {
+                        Console.Write("True");
+                    }
+                    else
+                        Console.WriteLine("False");
+                }
+                else
+                    Console.WriteLine("False");
+
+            }
+            else
+                Console.WriteLine("False");
+
+
+        }
+        else
+            Console.WriteLine("False");
+
+    }
+
+    public bool Z()
+    {
+
+        if (takeInput[counter] == 'b')
+        {
+
+            counter++;
+            if (Z() == true)
+            {
+                if (takeInput[counter] == 'c')
+                {
+
+                    counter++;
+                    return true;
+                }
+
+
+            }
+            else
+                Console.WriteLine("False");
+        }
+        else
+        {
+            return true;
+        }
+
+        return false;
+    }
+    static void Main()
+    {
+        Program P = new Program("aabbbc$".ToCharArray());
+        P.validate();
+
+
+    }
+
+}
