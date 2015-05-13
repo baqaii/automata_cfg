@@ -1,0 +1,108 @@
+/////ai bj ck where i < j && c >=0
+
+using System;
+
+
+
+    class Program
+    {
+
+
+        int counter = 0;
+        public char[] _takeIt;
+        public Program(char[] takeIt)
+        {
+            _takeIt = takeIt;
+
+        }
+
+        public bool checkMe()
+        {
+            if (_takeIt[counter] == 'a')
+            {
+                counter++;
+
+                if (checkMe() == true)
+                {
+                    if (_takeIt[counter] == 'b')
+                    {
+                        counter++;
+                        return true;
+                    }
+
+                }
+            }
+            else
+                return true;
+
+            return false;
+
+
+        }
+
+        public void validate()
+        {
+            if (checkMe() == true)
+            {
+
+                if (_takeIt[counter] == 'b')
+                    B();
+                else if (_takeIt[counter] == 'c')
+                    Console.Write("Wrong ");
+
+            }
+            else
+                Console.Write("Wrong");
+        }
+
+        public bool B()
+        {
+            bool checker = true;
+            if (checker == true)
+            {
+                if (_takeIt[counter] == 'b')
+                {
+                    counter++;
+
+                    B();
+                }
+
+                else if (_takeIt[counter] == 'c')
+                {
+                    C();
+                    checker = false;
+                }
+                else if (_takeIt[counter] == '$')
+                {
+                    Console.Write("Right");
+                    checker = false;
+
+                }
+            }
+            return true;
+        }
+
+
+        public void C()
+        {
+
+            if (_takeIt[counter] == 'c')
+            {
+
+                counter++;
+                C();
+            }
+            else if (_takeIt[counter] == '$')
+                Console.Write("true");
+        }
+        static void Main(string[] args)
+        {
+            String sender = "abbcccc$";
+            char[] send = sender.ToCharArray();
+            Program p = new Program(send);
+            p.validate();
+
+
+        }
+    }
+
