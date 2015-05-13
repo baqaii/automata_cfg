@@ -1,0 +1,137 @@
+//// ai bj ck where i<=k && b>=0
+
+using System;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // char[] a = {'a', 'a', 'b', 'b', '$'};
+            CFG c = new CFG("aaccc$".ToCharArray());
+            c.validate();
+        }
+    }
+
+    class CFG
+    {
+        public static int index = 0;
+        char[] ch;
+        bool Checker = true;
+        bool Checkerr = false;
+
+        public CFG(char[] ch)
+        {
+            this.ch = ch;
+        }
+
+        public bool s()
+        {
+            if (ch[index] == 'a')
+            {
+                index++;
+
+                if (s() == true)
+                {
+                    if (Checker == true)//
+                    {
+                        Checkerr = Z();
+                        Checker = false;
+                    }//
+
+
+                    /* if (Checker == true)
+                     {
+                         Checkerr = Y();
+                         Checker = false;
+                     }
+                     if (Checkerr == true)
+                     {*/
+                    if (Checkerr == true)//
+                    {//
+
+                        if (ch[index] == 'c')
+                        {
+                            index++;
+                            return true;
+                        }
+
+                    }//
+                    //}
+                }
+            }
+            else
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+
+
+
+        public bool Z()
+        {
+
+            if (ch[index] == 'b')
+            {
+                index++;
+                Z();
+            }
+
+            else if (ch[index] == 'c')
+                return true;
+
+            return true;
+        }
+
+
+        public void C()
+        {
+            if (ch[index] == 'c')
+            {
+                index++;
+                C();
+            }
+            else if (ch[index] == '$')
+                Console.Write("True");
+
+        }
+        public void validate()
+        {
+
+            if (s() == true)
+            {
+
+
+                if (ch[index] == 'c')
+                {
+
+
+                    //  Console.Write("TRUE\n");
+                    //         
+                    C();
+                    //return true;
+                }
+
+                else if
+                    (ch[index] == '$')
+                    Console.Write("True");
+                else if (ch[index] == 'b')
+                {
+                    if (Z() == true)
+                    {
+                        C();
+                    }
+                }
+
+            }
+            else
+                Console.Write("FALSE\n");
+            //     return false;
+        }
+
+    }
+
+
+//// aibjck where i<=k 
