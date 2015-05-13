@@ -1,5 +1,5 @@
 
-/// ai bj ck where i<=j  && c >=0
+/// ai bj ck where i<=j &&  i >= 0 , j >= 0  , c>=0
 
 using System;
 
