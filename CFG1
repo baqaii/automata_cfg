@@ -1,6 +1,4 @@
-// s -> <X><X>
-//  <X> -> a <X> b
-// <X> -> null
+// an bn am bm
 
 using System;
 using System.Collections.Generic;
