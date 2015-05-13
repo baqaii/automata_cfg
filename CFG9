@@ -5,9 +5,8 @@ class Program
 {
 
 
-    //abbc
-    //aabbbbcc
-    //aabbbbc
+    //abbccc
+    //aabbbbcccccc
     /// <summary>
     ///   ai bj ck where k = i + j;
     /// </summary>
