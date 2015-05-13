@@ -83,7 +83,7 @@ class program
     static void Main()
     {
 
-        program p = new program("ab$".ToCharArray());
+        program p = new program("aab$".ToCharArray());
         p.validate();
     }
 
